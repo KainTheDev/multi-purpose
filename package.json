@@ -1,6 +1,6 @@
 {
   "name": "multi-purpose",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Multi-purpose package with different functions.",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/SoulYT1534/multi-purpose/issues"
   },
-  "homepage": "https://github.com/SoulYT1534/multi-purpose#readme"
+  "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.6.2",
+    "quick.db": "^9.0.6"
+  }
 }

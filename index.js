@@ -1,17 +1,14 @@
-class randomNumber {
-    constructor(number) {
-        this.get = function (percentage) {
-            const random = Math.floor(Math.random()*number)
-          switch(percentage) {
-            case !percentage:
-                return random
-            break;
-            case percentage:
-                return random * percentage/100
-        }
-          
-        }
-    }
+//getting functions
+const functions = ["newDatabase", "randomNumber"]
+const value = []
+functions.map(i => {
+  value.push(require(`./functions/${i}`))
+})
+for (i in functions) {
+  eval(`var ${functions[i]} = ${value[i].toString()}`)
+  eval(`var ${functions[i]} = eval("${functions[i]}")`)
 }
-const num = new randomNumber(100)
-console.log(num.get(200))
+ eval(`var FUNCTIONS = {${functions.join(", ")}}`)
+
+//export functions
+module.exports = FUNCTIONS
