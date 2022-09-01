@@ -1,6 +1,6 @@
 const { QuickDB } = require("quick.db")
 const db = new QuickDB()
-class newDatabase {
+class sqliteDatabase {
   constructor() {
     this.table = db.table
     this.all =db.all
@@ -15,4 +15,4 @@ class newDatabase {
     this.pull = db.pull
   }
 }
-module.exports = newDatabase
+module.exports = sqliteDatabase

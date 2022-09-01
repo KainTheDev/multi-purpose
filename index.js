@@ -1,5 +1,5 @@
 //getting functions
-const functions = ["newDatabase", "randomNumber"]
+const functions = ["sqliteDatabase", "randomNumber"]
 const value = []
 functions.map(i => {
   value.push(require(`./functions/${i}`))
