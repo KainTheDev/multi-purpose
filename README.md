@@ -2,7 +2,7 @@
 A multi-purpose package with many different functions.
 
 ## shibeOnline
-Used for images. For example: shibes (a type of dog), birds, cats.
+Used for images. For example: shibes (a type of dog), birds, cats.\n
 More information in: (https://shibe.online/)
 Example:
 ```js
