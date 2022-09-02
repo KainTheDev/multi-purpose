@@ -26,6 +26,5 @@ constructor(option) {
   }
 }
 }
-const shibe = new shibeOnline("shibes")
 
 module.exports = shibeOnline
