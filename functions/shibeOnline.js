@@ -1,5 +1,3 @@
-const fetch = require("node-fetch")
-const map = new Map()
 class shibeOnline {
 constructor(option) {
   const options = ["shibes", "birds", "cats"]
@@ -9,6 +7,7 @@ constructor(option) {
       
   }
   const Fetch = function (option_2) {
+    const fetch = require("node-fetch")
     var data;
 
       if(option_2 === "json") data = fetch(`http://shibe.online/api/${option}?count=1&urls=true&httpsUrls=true`)
@@ -26,5 +25,4 @@ constructor(option) {
   }
 }
 }
-
 module.exports = shibeOnline

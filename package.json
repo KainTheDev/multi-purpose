@@ -1,6 +1,6 @@
 {
   "name": "multi-purpose",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Multi-purpose package with different functions.",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,6 @@
   },
   "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
   "dependencies": {
-    "better-sqlite3": "^7.6.2",
-    "node-fetch": "^2.6.7",
-    "quick.db": "^9.0.6"
+    "node-fetch": "^2.6.7"
   }
 }

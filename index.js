@@ -8,5 +8,5 @@ for (i in functions) {
   eval(`var ${functions[i]} = eval("${functions[i]}")`)
 }
  eval(`var FUNCTIONS = {${functions.join(", ")}}`)
-//export functions
+
 module.exports = FUNCTIONS
