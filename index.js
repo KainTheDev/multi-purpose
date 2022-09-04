@@ -1,4 +1,4 @@
-const functions = ["randomNumber", "shibeOnline"]
+const functions = ["randomNumber", "shibeOnline", "profilePictures"]
 const value = []
 functions.map(i => {
   value.push(require(`./functions/${i}`))
