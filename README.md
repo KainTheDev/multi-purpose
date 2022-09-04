@@ -1,9 +1,15 @@
 # multi-purpose
 A multi-purpose package with many different functions.
 
+## profilePictures
+Used for generating a random profile picture and send it back as an array.<br>
+More profile pictures: [pfps.gg](https://pfps.gg/)<br>
+Example:
+
+
 ## shibeOnline
 Used for images. For example: shibes (a type of dog), birds, cats.<br>
-More information in: [shibe.online](https://shibe.online/)<br>
+More information: [shibe.online](https://shibe.online/)<br>
 Example:
 ```js
 const {shibeOnline} = require("multi-purpose")
