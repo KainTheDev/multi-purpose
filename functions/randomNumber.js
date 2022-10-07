@@ -1,12 +1,5 @@
-class randomNumber {
-    constructor(number) {
+async function randomNumber (number) {
         this.random = Math.floor(Math.random()*number)
-        this.get = function () {
-                return this.random
+        return this.random
     }
-        this.log = function () {
-            console.log(this.random)
-        }
-    }
-}
 module.exports = randomNumber

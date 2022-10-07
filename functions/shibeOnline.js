@@ -1,12 +1,11 @@
-class shibeOnline {
-constructor(option) {
+async function shibeOnline (option) {
   const options = ["shibes", "birds", "cats"]
   switch (option) {
     case !Boolean(options.find(name => name===option)):
       return console.log("Invalid option!")
       
   }
-  const Fetch = function (option_2) {
+  const Fetch = async function (option_2) {
     const fetch = require("node-fetch")
     var data;
 
@@ -17,12 +16,13 @@ constructor(option) {
     
     return data
   }
-  this.json = function () {
+  const object = {}
+  object.json = async function () {
     return Fetch("json")
   }
-  this.string = function () {
+  object.string = async function () {
     return Fetch("string")
   }
-}
+  return object
 }
 module.exports = shibeOnline

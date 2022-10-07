@@ -1,41 +1,69 @@
 # multi-purpose
 A multi-purpose package with many different functions.
 
-## profilePictures
-Used for generating a random profile picture and send it back as an array.<br>
-More profile pictures: [pfps.gg](https://pfps.gg/)<br>
-Example:
-```js
-const {profilePictures} = require("multi-purpose")
-console.log(profilePictures())
-```
-
 ## shibeOnline
-Used for images. For example: shibes (a type of dog), birds, cats.<br>
+Cute animal pictures & photos. For example: shibes (a type of dog), birds, cats.<br>
 More information: [shibe.online](https://shibe.online/)<br>
 Example:
 ```js
 const {shibeOnline} = require("multi-purpose")
-const shibe = new shibeOnline("shibes") // *there's other choices, for example: shibes, birds, cats
-const image = await shibe.json()
-console.log(image)
+const shibe = await shibeOnline("shibes") // there's other choices. For example: Birds, cats.
+const json = await shibe.json() // -> get the json object
+console.log(json) // -> log to console
 ```
-_or you can use .then() method_
+_You can also use .then() method_
 ```js
 const {shibeOnline} = require("multi-purpose")
-const shibe = new shibeOnline("shibes") // *there's other choices, for example: shibes, birds, cats
-shibe.json().then(image => console.log(image))
+shibeOnline("shibes").then(data => data.json().then(console.log)) // -> log to console
 ```
 
 ## randomNumber
-Randomize a given number, send/log to console or get the data.<br>
+Randomize a given number.<br>
 Example:
 ```js
 const {randomNumber} = require("multi-purpose")
-const num = new randomNumber(100).get() // -> get the number
+const num = await randomNumber(100) // -> get the number
+console.log(num) // -> log to console
 ```
-_Or log to console directly_
+_You can also log to console directly_
 ```js
 const {randomNumber} = require("multi-purpose")
-new randomNumber(100).log() // -> log to console
+randomNumber(100).then(console.log) // -> log to console
+```
+
+## translateText
+Translate a text for you.<br>
+Example:
+```js
+const {translateText} = require("multi-purpose")
+const translated = await translateText({text: "hola", from: "spanish", to: "english"}) // -> get the text
+console.log(translated) // -> log to console
+```
+_You can also log to console directly_
+```js
+const {translateText} = require("multi-purpose")
+translateText({text: "hola", from: "spanish", to: "english"}).then(console.log) // -> log to console
+```
+
+## randomName
+Random boy or girl names.<br>
+More information:<br>
+[verywellfamily.com/boyNames](https://www.verywellfamily.com/top-1000-baby-boy-names-2757618)<br>
+[verywellfamily.com/girlNames](https://www.verywellfamily.com/top-1000-baby-girl-names-2757832)<br>
+Example:
+```js
+const {randomName} = require("multi-purpose")
+const name = await randomName({String: true}) // other choices: JSON, Array
+console.log(name)
+```
+### Or you can put your custom names!
+```js
+const {randomName} = require("multi-purpose")
+const name = await randomName({names_list: ["Paul", "John", "James", "Kyle", "Axel"], String: true}) // -> get the randomized name
+console.log(name) // -> log to console
+```
+_You can also log to console directly_
+```js
+const {randomName} = require("multi-purpose")
+randomName({names_list: ["Paul", "John", "James", "Kyle", "Axel"], String: true}).then(console.log) // -> log to console
 ```
