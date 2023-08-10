@@ -1,81 +1,165 @@
-# Multi-Purpose Utility Package
+# Multi-Purpose Package
 
-Looking for a package with a plethora of functionalities? Check out our Multi-Purpose package!
+## Description
 
-## ShibeOnline
+Welcome to the Multi-Purpose package, a versatile toolkit that offers a wide range of functionalities to enhance your projects. This package includes several useful functions, each designed to simplify various tasks. Whether you need cute animal pictures, random numbers, language translation, or even personalized name generation, Multi-Purpose has got you covered!
 
-Dive into adorable animal images. Whether you love shibes, birds, or cats, ShibeOnline offers an enchanting collection. For more, visit [shibe.online](https://shibe.online/).
+## Installation
 
-Example:
-```javascript
-const shibe = await shibeOnline("shibes"); // Try other options like Birds and Cats
-const json = await shibe.json(); // Get JSON
-console.log(json); // Console display
-```
-_Or, use `.then()` method_
-```javascript
-shibeOnline("shibes").then(data => data.json().then(console.log)); // Console display
+To get started with the Multi-Purpose package, you can install it using npm:
+
+```bash
+npm install multi-purpose
 ```
 
-## Randomness
+## Usage
 
-Experience the thrill of randomness with `randomNumber`. Generate within a specified range.
+Below are the details and examples for each function provided by the Multi-Purpose package:
 
-Example:
-```javascript
-const num = await randomNumber(100); // Get random number
-console.log(num); // Console display
-```
-_Or, simplify with `.then()` method_
-```javascript
-randomNumber(100).then(console.log); // Console display
-```
+### shibeOnline
 
-## Translate Text
+Fetch adorable animal pictures, such as shibes (a type of dog), birds, and cats, from shibe.online. You can choose from a variety of animal categories and obtain image data in JSON format.
 
-Overcome language barriers effortlessly with `translateText`. Translate between languages.
+#### Example
 
-Example:
-```javascript
-const translated = await translateText({ text: "hola", from: "spanish", to: "english" }); // Get translated text
-console.log(translated); // Console display
-```
-_Or, use `.then()` method_
-```javascript
-translateText({ text: "hola", from: "spanish", to: "english" }).then(console.log); // Console display
+```js
+const { shibeOnline } = require("multi-purpose");
+
+async function fetchShibe() {
+  try {
+    const shibeData = await shibeOnline("shibes");
+    const jsonData = await shibeData.json();
+    console.log(jsonData);
+  } catch (error) {
+    console.error("Error fetching shibe data:", error);
+  }
+}
+
+fetchShibe();
 ```
 
-## Random Names
+### randomNumber
 
-Explore boy or girl names with `randomName`. Customize with your list.
+Generate a random number within a specified range.
 
-Additional Information:
-- [boyNames](https://www.verywellfamily.com/top-1000-baby-boy-names-2757618)
-- [girlNames](https://www.verywellfamily.com/top-1000-baby-girl-names-2757832)
+#### Example
 
-Example:
-```javascript
-const name = await randomName({ String: true }); // Options: JSON, Array
-console.log(name); // Console display
+```js
+const { randomNumber } = require("multi-purpose");
+
+async function generateRandomNumber() {
+  try {
+    const randomNumberWithinRange = await randomNumber(100);
+    console.log(randomNumberWithinRange);
+  } catch (error) {
+    console.error("Error generating random number:", error);
+  }
+}
+
+generateRandomNumber();
 ```
-_Or, directly log the result_
-```javascript
-randomName({ names_list: ["Paul", "John", "James", "Kyle", "Axel"], String: true }).then(console.log); // Console display
+
+### translateText
+
+Translate text from one language to another using the Multi-Purpose package's translation functionality.
+
+#### Example
+
+```js
+const { translateText } = require("multi-purpose");
+
+async function translate() {
+  try {
+    const translatedText = await translateText({
+      text: "hola",
+      from: "spanish",
+      to: "english",
+    });
+    console.log(translatedText);
+  } catch (error) {
+    console.error("Error translating text:", error);
+  }
+}
+
+translate();
 ```
 
-## Truths or Dares
+### randomName
 
-Have a blast with `truthOrDare`. Choose between truths and dares for an exciting experience.
+Get random boy or girl names, or even your custom list of names.
 
-Example:
-```javascript
-const selectedChallenge = await truthOrDare(maxValues = 1); // Get challenge
+#### Example
 
-// Additional options: onlyTruth or onlyDare.
+```js
+const { randomName } = require("multi-purpose");
 
-console.log(selectedChallenge); // Console display
+async function getRandomName() {
+  try {
+    const randomNameString = await randomName({ String: true });
+    console.log(randomNameString);
+  } catch (error) {
+    console.error("Error fetching random name:", error);
+  }
+}
+
+getRandomName();
 ```
-_Or, use `.then()` method_
-```javascript
-truthOrDare(maxValues = 1).then(console.log); // Console display
+
+### googleImageSearch
+
+Perform an image search on Google and fetch a list of image results based on a given query.
+
+#### Example
+
+```js
+const googleImageSearch = require("multi-purpose/googleImageSearch");
+
+(async () => {
+  try {
+    const query = "cute puppies";
+    const results = await googleImageSearch(query);
+
+    if (results) {
+      console.log(results);
+    } else {
+      console.error("Error fetching image results.");
+    }
+  } catch (error) {
+    console.error("Error performing Google Image search:", error);
+  }
+})();
 ```
+
+Please ensure that you have the necessary dependencies, such as `node-fetch`, installed for the functions to work correctly.
+
+### fetchRandomTruthsAndDares
+
+Fetch random truths and dares for an exciting experience.
+
+#### Example
+
+```js
+const fetchRandomTruthsAndDares = require("multi-purpose/fetchRandomTruthsAndDares");
+
+(async () => {
+  try {
+    const selectedChallenges = await fetchRandomTruthsAndDares(maxValues = 1);
+
+    // Additional options: onlyTruth or onlyDare.
+
+    console.log(selectedChallenges);
+  } catch (error) {
+    console.error("Error fetching random truths and dares:", error);
+  }
+})();
+```
+
+## Contribution
+
+We welcome contributions to the Multi-Purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/your-username/your-repo). Let's build an even more powerful and user-friendly package together!
+
+## License
+
+This package is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use it in your projects, commercial or personal.
+
+We hope you find the Multi-Purpose package helpful in your development endeavors. Happy coding!
