@@ -1,69 +1,81 @@
-# multi-purpose
-A multi-purpose package with many different functions.
+# Multi-Purpose Utility Package
 
-## shibeOnline
-Cute animal pictures & photos. For example: shibes (a type of dog), birds, cats.<br>
-More information: [shibe.online](https://shibe.online/)<br>
-Example:
-```js
-const {shibeOnline} = require("multi-purpose")
-const shibe = await shibeOnline("shibes") // there's other choices. For example: Birds, cats.
-const json = await shibe.json() // -> get the json object
-console.log(json) // -> log to console
-```
-_You can also use .then() method_
-```js
-const {shibeOnline} = require("multi-purpose")
-shibeOnline("shibes").then(data => data.json().then(console.log)) // -> log to console
-```
+Looking for a package with a plethora of functionalities? Check out our Multi-Purpose package!
 
-## randomNumber
-Randomize a given number.<br>
+## ShibeOnline
+
+Dive into adorable animal images. Whether you love shibes, birds, or cats, ShibeOnline offers an enchanting collection. For more, visit [shibe.online](https://shibe.online/).
+
 Example:
-```js
-const {randomNumber} = require("multi-purpose")
-const num = await randomNumber(100) // -> get the number
-console.log(num) // -> log to console
+```javascript
+const shibe = await shibeOnline("shibes"); // Try other options like Birds and Cats
+const json = await shibe.json(); // Get JSON
+console.log(json); // Console display
 ```
-_You can also log to console directly_
-```js
-const {randomNumber} = require("multi-purpose")
-randomNumber(100).then(console.log) // -> log to console
+_Or, use `.then()` method_
+```javascript
+shibeOnline("shibes").then(data => data.json().then(console.log)); // Console display
 ```
 
-## translateText
-Translate a text for you.<br>
+## Randomness
+
+Experience the thrill of randomness with `randomNumber`. Generate within a specified range.
+
 Example:
-```js
-const {translateText} = require("multi-purpose")
-const translated = await translateText({text: "hola", from: "spanish", to: "english"}) // -> get the text
-console.log(translated) // -> log to console
+```javascript
+const num = await randomNumber(100); // Get random number
+console.log(num); // Console display
 ```
-_You can also log to console directly_
-```js
-const {translateText} = require("multi-purpose")
-translateText({text: "hola", from: "spanish", to: "english"}).then(console.log) // -> log to console
+_Or, simplify with `.then()` method_
+```javascript
+randomNumber(100).then(console.log); // Console display
 ```
 
-## randomName
-Random boy or girl names.<br>
-More information:<br>
-[verywellfamily.com/boyNames](https://www.verywellfamily.com/top-1000-baby-boy-names-2757618)<br>
-[verywellfamily.com/girlNames](https://www.verywellfamily.com/top-1000-baby-girl-names-2757832)<br>
+## Translate Text
+
+Overcome language barriers effortlessly with `translateText`. Translate between languages.
+
 Example:
-```js
-const {randomName} = require("multi-purpose")
-const name = await randomName({String: true}) // other choices: JSON, Array
-console.log(name)
+```javascript
+const translated = await translateText({ text: "hola", from: "spanish", to: "english" }); // Get translated text
+console.log(translated); // Console display
 ```
-### Or you can put your custom names!
-```js
-const {randomName} = require("multi-purpose")
-const name = await randomName({names_list: ["Paul", "John", "James", "Kyle", "Axel"], String: true}) // -> get the randomized name
-console.log(name) // -> log to console
+_Or, use `.then()` method_
+```javascript
+translateText({ text: "hola", from: "spanish", to: "english" }).then(console.log); // Console display
 ```
-_You can also log to console directly_
-```js
-const {randomName} = require("multi-purpose")
-randomName({names_list: ["Paul", "John", "James", "Kyle", "Axel"], String: true}).then(console.log) // -> log to console
+
+## Random Names
+
+Explore boy or girl names with `randomName`. Customize with your list.
+
+Additional Information:
+- [boyNames](https://www.verywellfamily.com/top-1000-baby-boy-names-2757618)
+- [girlNames](https://www.verywellfamily.com/top-1000-baby-girl-names-2757832)
+
+Example:
+```javascript
+const name = await randomName({ String: true }); // Options: JSON, Array
+console.log(name); // Console display
+```
+_Or, directly log the result_
+```javascript
+randomName({ names_list: ["Paul", "John", "James", "Kyle", "Axel"], String: true }).then(console.log); // Console display
+```
+
+## Truths or Dares
+
+Have a blast with `truthOrDare`. Choose between truths and dares for an exciting experience.
+
+Example:
+```javascript
+const selectedChallenge = await truthOrDare(maxValues = 1); // Get challenge
+
+// Additional options: onlyTruth or onlyDare.
+
+console.log(selectedChallenge); // Console display
+```
+_Or, use `.then()` method_
+```javascript
+truthOrDare(maxValues = 1).then(console.log); // Console display
 ```
