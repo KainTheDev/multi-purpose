@@ -3,8 +3,8 @@ const path = require('path');
 
 async function fetchRandomTruthsAndDares(maxValues, onlyTruth = false, onlyDare = false) {
   try {
-    const truthFilePath = path.join(__dirname.replace("/functions", ""), 'data', 'truth.txt');
-    const dareFilePath = path.join(__dirname.replace("/functions", ""), 'data', 'dare.txt');
+    const truthFilePath = path.join(__dirname.replace("/functions", "").replace("\\functions", ""), 'data', 'truth.txt');
+    const dareFilePath = path.join(__dirname.replace("/functions", "").replace("\\functions", ""), 'data', 'dare.txt');
     
     let allTruthsAndDares = [];
 
