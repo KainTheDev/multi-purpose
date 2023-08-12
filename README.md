@@ -132,18 +132,18 @@ const googleImageSearch = require("multi-purpose/googleImageSearch");
 
 Please ensure that you have the necessary dependencies, such as `node-fetch`, installed for the functions to work correctly.
 
-### fetchRandomTruthsAndDares
+### randomTOD
 
 Fetch random truths and dares for an exciting experience.
 
 #### Example
 
 ```js
-const fetchRandomTruthsAndDares = require("multi-purpose/fetchRandomTruthsAndDares");
+const {randomTOD} = require("multi-purpose");
 
 (async () => {
   try {
-    const selectedChallenges = await fetchRandomTruthsAndDares(maxValues = 1);
+    const selectedChallenges = await randomTOD(maxValues = 1);
 
     // Additional options: onlyTruth or onlyDare.
 
