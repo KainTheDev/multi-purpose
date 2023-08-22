@@ -1,6 +1,11 @@
-const randomNumber = require("./functions/randomNumber")
-const shibeOnline = require("./functions/shibeOnline")
-const translateText = require("./functions/translateText")
-const randomName = require("./functions/randomName")
-const truthOrDare = require("./functions/randomTOD")
-module.exports = {randomNumber, shibeOnline, translateText, randomName, truthOrDare}
+const fs = require('fs');
+const path = require('path');
+
+const functionFiles = fs.readdirSync(path.join(__dirname, 'functions'));
+const functions = {};
+
+functionFiles.forEach(fileName => {
+  const functionName = path.parse(fileName).name;
+  functions[functionName] = require(path.join(__dirname, 'functions', fileName));
+});
+module.exports = functions;

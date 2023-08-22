@@ -1,17 +1,21 @@
+/**
+ * 
+ * @param {string} option options for which type of image / json data will be fetched. Available options: shibes, birds, cats.
+ * @returns 
+ */
 async function shibeOnline (option) {
   const options = ["shibes", "birds", "cats"]
-  switch (option) {
-    case !Boolean(options.find(name => name===option)):
-      return console.log("Invalid option!")
-      
+  if(!option) throw new Error("Missing paremeter: option.");
+  else if(!option in options) {
+    throw new Error("Invalid option provided. Available options:\n- "+options.join(", "))
   }
-  const Fetch = async function (option_2) {
+  const Fetch = async function (type) {
     const fetch = require("node-fetch")
     var data;
 
-      if(option_2 === "json") data = fetch(`http://shibe.online/api/${option}?count=1&urls=true&httpsUrls=true`)
+      if(type === "json") data = fetch(`http://shibe.online/api/${option}?count=1&urls=true&httpsUrls=true`)
     .then(response => response.json())
-      if(option_2 === "string") data = fetch(`http://shibe.online/api/${option}?count=1&urls=true&httpsUrls=true`)
+      if(type === "string") data = fetch(`http://shibe.online/api/${option}?count=1&urls=true&httpsUrls=true`)
     .then(response => response.text())
     
     return data

@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
   "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.0",
+    "fs": "^0.0.1-security",
     "node-fetch": "^2.6.7",
-    "translate": "^1.4.1"
+    "translate": "^2.0.2"
   }
 }

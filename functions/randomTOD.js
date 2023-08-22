@@ -1,5 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+/**
+ * 
+ * @param {Number} maxValues configure how much truths or dares will be fetched
+ * @param {Boolean} onlyTruth returns only truths option
+ * @param {Boolean} onlyDare returns only dares option
+ * @returns 
+ */
 async function randomTOD(maxValues = 1, onlyTruth = false, onlyDare = false) {
   try {
     const truthFilePath = path.join(__dirname.replace("functions", ""), 'data', 'truth.txt');

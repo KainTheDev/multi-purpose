@@ -1,5 +1,11 @@
-async function randomName ({Your_names_list, String, Array, JSON}) {
-  var string = `Olivia
+/**
+ * 
+ * @param {Array} Your_names_list custom names list
+ * @param  {string} type this parameter is used for defining response type. 3 available types: string, array and JSON
+ * @returns
+ */
+async function randomName (Your_names_list, type) {
+const string = `Olivia
 Emma
 Charlotte
 Amelia
@@ -2002,9 +2008,9 @@ Davian`
   string = string.split("\n")
   if(Your_names_list) string = Your_names_list
   var result = string[Math.floor(Math.random()*string.length)]
-  if(String === true) result = String(result)
-  if(Array === true) result = [result]
-  if(JSON === true) result = {name: result}
+  if(type === "string") result = String(result)
+  if(type === "array") result = [result]
+  if(type === "JSON") result = {name: result}
   return result
 }
 module.exports = randomName
