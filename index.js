@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const functionFiles = fs.readdirSync(path.join(__dirname, 'functions'));
-const functions = {};
+const utilFiles = fs.readdirSync(path.join(__dirname, 'utils'));
+const utils = {};
 
-functionFiles.forEach(fileName => {
-  const functionName = path.parse(fileName).name;
-  functions[functionName] = require(path.join(__dirname, 'functions', fileName));
+utilFiles.forEach(fileName => {
+  const utilsName = path.parse(fileName).name;
+  utils[utilsName] = require(path.join(__dirname, 'utils', fileName));
 });
-module.exports = functions;
+module.exports = utils;
