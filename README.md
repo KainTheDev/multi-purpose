@@ -1,10 +1,13 @@
 # Multi-Purpose Package
 
-## 1: Description
+## Description
 
-Multi-purpose - a package used for variety purpose. For more information, please read in the docs below (third header).
+Multi-purpose - a package used for variety purpose. For more information, please read in the docs below.
+This package was made by Kain. It main purpose was used for Cloud Discord bot.
+More information about Cloud Discord bot:
 
-## 2: Installation
+
+## Installation
 
 To get started with the Multi-Purpose package, you can install it using npm:
 
@@ -12,7 +15,7 @@ To get started with the Multi-Purpose package, you can install it using npm:
 npm install multi-purpose
 ```
 
-## 3: Documentation
+## Documentation
 [Click here](https://docs.google.com/document/d/1SaQZxuw2Ddqvuodz2QoIuX1kwDU4tgjWvt-xABikkkE/edit?usp=sharing) for docs.
 
 ## Contribution
