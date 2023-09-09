@@ -9,7 +9,7 @@ class textDatabase {
         if(id) {
             this.id = id
         }else{
-            throw new Error("Missing ID.")
+            console.trace("Missing ID."), process.exit(0);
         }
     }
     async execute(method, key, value) {

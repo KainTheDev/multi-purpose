@@ -18,7 +18,7 @@ async function customSearch(query, imageSearch) {
       return imageResults;
     })
     .catch(error => {
-      throw new Error('Error fetching image search results: ' + error.message);
+      console.trace('Error fetching image search results: ' + error.message), console.exit(0);
     });
 }
 module.exports = customSearch

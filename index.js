@@ -4,7 +4,7 @@ const randomNumber = require("./utils/randomNumber");
 const randomTOD = require("./utils/randomTOD");
 const shibeOnline = require("./utils/shibeOnline");
 const textDatabase = require("./utils/textDatabase");
-module.exports = {
+const multiPurpose = {
   customSearch, 
   randomName,
   randomNumber,
@@ -12,3 +12,4 @@ module.exports = {
   shibeOnline,
   textDatabase,
 }
+module.exports = multiPurpose

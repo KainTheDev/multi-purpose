@@ -5,9 +5,9 @@
  */
 async function shibeOnline (option) {
   const options = ["shibes", "birds", "cats"]
-  if(!option) throw new Error("Missing paremeter: option.");
+  if(!option) console.trace("Missing paremeter: option."), process.exit(0);
   else if(!option in options) {
-    throw new Error("Invalid option provided. Available options:\n- "+options.join(", "))
+    console.trace("Invalid option provided. Available options:\n- "+options.join(", ")), process.exit(0);
   }
   const Fetch = async function (type) {
     const fetch = require("node-fetch")

@@ -27,18 +27,18 @@ async function randomTOD(maxValues = 1, onlyTruth = false, onlyDare = false) {
     }
 
     if (!allTruthsAndDares.length) {
-      throw new Error('No truths and dares found in the files.');
+      console.trace('No truths and dares found in the files.'), process.exit(0);
     }
 
     if (maxValues > allTruthsAndDares.length) {
-      throw new Error(`Max values (${maxValues}) exceed the number of available truths and dares (${allTruthsAndDares.length}).`);
+      console.trace(`Max values (${maxValues}) exceed the number of available truths and dares (${allTruthsAndDares.length}).`), process.exit(0);
     }
 
     const shuffledTruthsAndDares = shuffleArray(allTruthsAndDares);
     const selectedTruthsAndDares = shuffledTruthsAndDares.slice(0, maxValues);
     return selectedTruthsAndDares;
   } catch (error) {
-    throw new Error('Error reading the files: ' + error.message);
+    console.trace('Error reading the files: ' + error.message), process.exit(0);
   }
 }
 
