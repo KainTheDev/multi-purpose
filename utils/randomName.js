@@ -7,7 +7,7 @@ const { readFileSync } = require("fs")
  * @returns
  */
 async function randomName (Your_names_list, type) {
-  if(Your_names_list && typeof Your_names_list !== "object") console.trace("Your_names_list must be array."), console.exit(0);
+  if(Your_names_list && typeof Your_names_list !== "object") console.trace("Your_names_list must be array."), process.exit(0);
   let nameList = readFileSync("data/names.txt", "utf-8").split("\n")
   if(Your_names_list) nameList = Your_names_list
   var result = nameList[Math.floor(Math.random()*nameList.length)]

@@ -2,15 +2,13 @@ const axios = require('axios');
 /**
  * 
  * @param {String} query query to search
- * @param {Boolean} imageSearch toggle image search
+ * @param {boolean} imageSearchOption toggle if results should be image or not
+ * @param {String} apiKey API key from googleapis
+ * @param {String} searchEngineId search engine ID from googleapis
  * @returns 
  */
-async function customSearch(query, imageSearch) {
-  const apiKey = 'AIzaSyDxiRbDNA26skPyvzjAb2iSD7wrmaQkpXM';
-  const searchEngineId = '50cb02e24a0f0f93e';
-
-  const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${query}${imageSearch ? "&searchType=image" : ''}&key=${apiKey}&cx=${searchEngineId}`;
-
+async function customSearch(query, apiKey, searchEngineId, imageSearchOption) {
+  const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${query}${imageSearchOption ? `&searchType=image` : ''}&key=${apiKey}&cx=${searchEngineId}`;
   return axios.get(apiUrl)
     .then(response => {
       const items = response.data.items;
@@ -18,7 +16,8 @@ async function customSearch(query, imageSearch) {
       return imageResults;
     })
     .catch(error => {
-      console.trace('Error fetching image search results: ' + error.message), console.exit(0);
+      console.trace('Error fetching image search results: ' + error.message), process.exit(0);
     });
 }
+
 module.exports = customSearch
