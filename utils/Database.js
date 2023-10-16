@@ -1,5 +1,5 @@
 let { default: fetch } = require("node-fetch")
-class textDatabase {
+class Database {
     /**
      * @param {String} key key of the data
      * @param {Number} value value of the data
@@ -58,4 +58,4 @@ class textDatabase {
         return data;
     }
 }
-module.exports = textDatabase
+module.exports = Database

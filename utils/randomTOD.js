@@ -9,25 +9,16 @@ const path = require('path');
  */
 async function randomTOD(maxValues = 1, onlyTruth = false, onlyDare = false) {
   try {
-    const truthFilePath = path.join(__dirname.replace("functions", ""), 'data', 'truth.txt');
-    const dareFilePath = path.join(__dirname.replace("functions", ""), 'data', 'dare.txt');
-    
     let allTruthsAndDares = [];
 
     if (!onlyDare) {
-      const truthData = fs.readFileSync(truthFilePath, 'utf-8');
-      const truths = truthData.split('\n').map(line => line.trim()).filter(line => line !== '');
-      allTruthsAndDares = allTruthsAndDares.concat(truths);
+      for (maxValues)
     }
 
     if (!onlyTruth) {
       const dareData = fs.readFileSync(dareFilePath, 'utf-8');
       const dares = dareData.split('\n').map(line => line.trim()).filter(line => line !== '');
       allTruthsAndDares = allTruthsAndDares.concat(dares);
-    }
-
-    if (!allTruthsAndDares.length) {
-      console.trace('No truths and dares found in the files.'), process.exit(0);
     }
 
     if (maxValues > allTruthsAndDares.length) {
