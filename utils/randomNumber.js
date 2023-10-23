@@ -1,11 +1,11 @@
 /**
  * 
  * @param {Number} number number to randomize
- * @returns 
+ * @returns {Number}
  */
 async function randomNumber (number) {
-        random = Math.floor(Math.random()*number)
-        return random
+        if(typeof number !== 'number') throw "Parameter number must be a number.";
+        return Math.floor(Math.random()*number)
 }
 
 module.exports = randomNumber
