@@ -1,6 +1,5 @@
+const { decode } = require("he")
 const { default: fetch } = require("node-fetch")
-const randomNumber = require("./randomNumber")
-
 /**
  * @param {Object} config
  * @param {"Any" |
@@ -28,16 +27,22 @@ const randomNumber = require("./randomNumber")
 * "Science: Gadgets" | 
 * "Entertainment: Japanese Anime & Manga" | 
 * "Entertainment: Cartoon & Animations"} config.filter_category Filter out a specific category [DEFAULT: "Any"]
-* @returns {{category: String, type: String, difficulty: String, question: String, correct_answers: String, incorrect_answers: Array}} 
+* @returns {Array} 
 */
-async function getTriviaQuestions(config={filter_category: "Any"}) {
-    const {filter_category} = config
-    const response = await fetch(`https://opentdb.com/api.php?amount=100`)
+
+async function getTriviaQuestions(config = { filter_category: "Any" }) {
+    const { filter_category } = config
+    const response = await fetch(`https://opentdb.com/api.php?amount=200`)
     const data = await response.json()
-    const {results} = data
+    const results = data.results.map(JSON => {
+        JSON.question = decode(JSON.question)
+        JSON.incorrect_answers = JSON.incorrect_answers.map(string => decode(string))
+        JSON.correct_answer = decode(JSON.correct_answer)
+        return JSON
+    })
     switch (filter_category) {
         case "Any":
-            return results[randomNumber(results.length)]
+            return results
         case "General Knowledge":
         case "Entertainment: Books":
         case "Entertainment: Film":
@@ -63,6 +68,9 @@ async function getTriviaQuestions(config={filter_category: "Any"}) {
         case "Entertainment: Japanese Anime & Manga":
         case "Entertainment: Cartoon & Animations":
             filteredResults = results.filter(result => result.category === filter_category)
+            return filteredResults
+        default:
+            return results
     }
 }
 module.exports = getTriviaQuestions

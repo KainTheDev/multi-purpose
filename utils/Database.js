@@ -3,7 +3,7 @@ class Database {
     /**
      * @param {String} key key of the data
      * @param {Number} value value of the data
-     * @returns {Database}
+     * @returns
      **/
     constructor(id) {
         if(id) {
@@ -20,7 +20,7 @@ class Database {
     /**
      * @param {String} key key of the data
      * @param {Number} value value of the data
-     * @returns {Database}
+     * @returns
      **/
     async get(key) {
         let data = await this.execute(this.get.name, key)
@@ -35,7 +35,7 @@ class Database {
     /**
      * @param {String} key key of the data
      * @param {Number} value value of the data
-     * @returns {Database}
+     * @returns
      **/
     async set(key, value) {
         let data = await this.execute(this.set.name, key, value)
@@ -45,7 +45,7 @@ class Database {
     /**
      * @param {String} key key of the data
      * @param {Number} value value of the data
-     * @returns {Database}
+     * @returns
      **/
     async delete(key) {
         let data = await this.execute(this.delete.name, key)

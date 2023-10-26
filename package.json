@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
   "dependencies": {
+    "buffer": "^6.0.3",
     "fs": "^0.0.1-security",
+    "he": "^1.2.0",
     "node-fetch": "^2.6.7",
     "path": "^0.12.7"
   }

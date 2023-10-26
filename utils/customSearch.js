@@ -5,7 +5,7 @@ const { default: fetch } = require('node-fetch');
  * @param {boolean} imageSearchOption toggle if results should be image or not
  * @param {String} apiKey API key from googleapis
  * @param {String} searchEngineId search engine ID from googleapis
- * @returns {Object}
+ * @returns {JSON}
  */
 async function customSearch(query, apiKey, searchEngineId, imageSearchOption) {
   const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${query}${imageSearchOption ? `&searchType=image` : ''}&key=${apiKey}&cx=${searchEngineId}`;

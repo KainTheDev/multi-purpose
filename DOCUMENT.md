@@ -1,6 +1,6 @@
 # Package Documentation
 
-This document provides an overview of the functions and methods available in your package. You will find details on how to use each code snippet, examples, and explanations.
+This document provides an overview of the functions and methods available of the multi-purpose package. You will find details on how to use each code snippet, examples, and explanations.
 
 ## `customSearch`
 
@@ -144,6 +144,6 @@ async function manageData() {
 manageData();
 ```
 
-This documentation provides a comprehensive guide on how to use the functions and classes in your package. Make sure to replace the placeholder values with your actual API keys, IDs, and data.
+This documentation provides a comprehensive guide on how to use the functions and classes in the multi-purpose package. Make sure to replace the placeholder values with your actual API keys, IDs, and data.
 
 

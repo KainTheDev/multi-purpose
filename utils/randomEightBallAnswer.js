@@ -7,7 +7,7 @@
  * - emoji - emoji-only answers
  * - advanced - more additional answers
  * @param {String[]} config.customAnswers Add your own answers
- * @returns {{answer: String}}
+ * @returns {String}
  */
 async function randomEightBallAnswer(config) {
     try {
@@ -70,16 +70,16 @@ async function randomEightBallAnswer(config) {
     switch (config.answerType) {
         case "general":
             console.log(generalAnswers)
-            return { answer: generalAnswers[getRandomIndex(config.answerType)] };
+            return generalAnswers[getRandomIndex(config.answerType)];
         case "emoji":
-            return { answer: emojiAnswers[getRandomIndex(config.answerType)] };
+            return emojiAnswers[getRandomIndex(config.answerType)];
         case "mixed":
             if (customAnswers) {
                 throw "Cannot generate mixed answers since customAnswers is in used.";
             }
-            return { answer: `${emojiAnswers[getRandomIndex(config.answerType)]} ${generalAnswers[getRandomIndex(config.answerType)]}` };
+            return `${emojiAnswers[getRandomIndex(config.answerType)]} ${generalAnswers[getRandomIndex(config.answerType)]}`;
         case "advanced":
-            return { answer: `${advancedAnswers[getRandomIndex(config.answerType)]}` };
+            return advancedAnswers[getRandomIndex(config.answerType)];
         default:
             throw "Invalid answer type";
     }
