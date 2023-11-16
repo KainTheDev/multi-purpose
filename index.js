@@ -20,4 +20,5 @@ const multiPurpose = {
   randomEightBallAnswer,
   randomWUR
 }
+
 module.exports = multiPurpose
