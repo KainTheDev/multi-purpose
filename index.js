@@ -16,6 +16,7 @@ const multiPurpose = {
   randomTOD,
   shibeOnline,
   Database,
+  textDatabase,
   getTriviaQuestions,
   randomEightBallAnswer,
   randomWUR
