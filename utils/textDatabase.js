@@ -50,6 +50,10 @@ class textDatabase {
     deleteAll() {
         writeFileSync(this.filePath, "{}")
     }
+    /**
+     * 
+     * @param {string} key 
+     */
     delete(key) {
         delete this.data[key]
         writeFileSync(this.filePath, JSON.stringify(this.data, null, '\t'))
