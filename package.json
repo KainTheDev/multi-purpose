@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/SoulYT1534/multi-purpose/issues"
   },
-  "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
     "he": "^1.2.0",
