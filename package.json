@@ -1,6 +1,6 @@
 {
   "name": "multi-purpose",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Multi-purpose package with different functions.",
   "main": "index.js",
   "scripts": {
