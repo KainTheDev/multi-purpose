@@ -16,11 +16,11 @@ npm install multi-purpose
 ```
 
 ## Documentation
-[Click here](https://github.com/KainTheDev/multi-purpose/blob/main/DOCUMENT.md) for docs.
+[Click here](https://kainthedev.github.io/multi-documentation/) for docs.
 
 ## Contribution
 
-We welcome contributions to the Multi-Purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/your-username/your-repo). Let's build an even more powerful and user-friendly package together!
+We welcome contributions to the Multi-Purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/KainTheDev/multi-purpose). Let's build an even more powerful and user-friendly package together!
 
 ## License
 
