@@ -6,6 +6,7 @@ const shibeOnline = require("./utils/shibeOnline");
 const Database = require("./utils/Database");
 const textDatabase = require("./utils/textDatabase")
 const getTriviaQuestions = require("./utils/getTriviaQuestions");
+const getScrambledWordQuestions = require("./utils/getScrambledWordQuestions");
 const randomEightBallAnswer = require("./utils/randomEightBallAnswer");
 const randomWUR = require("./utils/randomWUR");
 
@@ -16,6 +17,7 @@ const multiPurpose = {
   randomTOD,
   shibeOnline,
   getTriviaQuestions,
+  getScrambledWordQuestions,
   randomEightBallAnswer,
   randomWUR,
   Database,
