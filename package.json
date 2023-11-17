@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "jsdoc utils --readme documentation/README.md --destination documentation"
+    "jsdoc": "jsdoc utils --readme README.md --destination documentation"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "bugs": {
     "url": "https://github.com/SoulYT1534/multi-purpose/issues"
   },
+  "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
     "he": "^1.2.0",
