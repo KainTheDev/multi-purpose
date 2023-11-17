@@ -22,7 +22,7 @@ class textDatabase {
     /**
      * 
      * @param {string} key 
-     * @returns 
+     * @returns {any}
      */
     async get(key) {
         return this.data[key]
@@ -36,7 +36,7 @@ class textDatabase {
         writeFileSync(this.filePath, JSON.stringify(this.data, null, '\t'))
     }
     /**
-     * @returns {{key: string, value: any}[]}
+     * @returns {...{key: string, value: string}}
      */
     async getAll() {
         const list = []
@@ -59,4 +59,5 @@ class textDatabase {
         writeFileSync(this.filePath, JSON.stringify(this.data, null, '\t'))
     }
 }
+const db = new textDatabase('text')
 module.exports = textDatabase

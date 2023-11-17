@@ -15,11 +15,11 @@ const multiPurpose = {
   randomNumber,
   randomTOD,
   shibeOnline,
-  Database,
-  textDatabase,
   getTriviaQuestions,
   randomEightBallAnswer,
-  randomWUR
+  randomWUR,
+  Database,
+  textDatabase,
 }
 
 module.exports = multiPurpose
