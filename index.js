@@ -19,7 +19,7 @@ const multiPurpose = {
   randomEightBallAnswer,
   randomWUR,
   Database,
-  textDatabase,
+  textDatabase
 }
 
 module.exports = multiPurpose
