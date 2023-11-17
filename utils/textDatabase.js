@@ -59,5 +59,4 @@ class textDatabase {
         writeFileSync(this.filePath, JSON.stringify(this.data, null, '\t'))
     }
 }
-const db = new textDatabase('text')
 module.exports = textDatabase
