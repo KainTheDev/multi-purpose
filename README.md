@@ -18,7 +18,7 @@ npm install multi-purpose
 
 ## Contribution
 
-We welcome contributions to the Multi-purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/KainTheDev/multi-purpose). Let's build an even more powerful and user-friendly package together!
+We welcome contributions to the Multi-purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/KainTheDev/multi-purpose).
 
 ## License
 
