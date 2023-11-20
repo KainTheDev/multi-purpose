@@ -3,9 +3,7 @@
 ## Description
 
 Multi-purpose - a package used for variety purpose. For more information, please read in the docs below.
-This package was made by Kain. It main purpose was used for Cloud Discord bot.
-More information about Cloud Discord bot:
-
+This package was made by Kain. It's main purpose was used for Discord bots.
 
 ## Installation
 
