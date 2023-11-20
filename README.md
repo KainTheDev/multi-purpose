@@ -7,7 +7,7 @@ This package was made by Kain. It's main purpose was used for Discord bots.
 
 ## Installation
 
-To get started with the Multi-Purpose package, you can install it using npm:
+To get started with the Multi-purpose package, you can install it using npm:
 
 ```bash
 npm install multi-purpose
@@ -18,10 +18,10 @@ npm install multi-purpose
 
 ## Contribution
 
-We welcome contributions to the Multi-Purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/KainTheDev/multi-purpose). Let's build an even more powerful and user-friendly package together!
+We welcome contributions to the Multi-purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/KainTheDev/multi-purpose). Let's build an even more powerful and user-friendly package together!
 
 ## License
 
 This package is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use it in your projects, commercial or personal.
 
-We hope you find the Multi-Purpose package helpful in your development endeavors. Happy coding!
+We hope you find the Multi-purpose package helpful in your development endeavors. Happy coding!
