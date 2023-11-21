@@ -30,7 +30,7 @@ const randomRateConfig = {
 }
 /**
  * 
- * @param {"gay" | "peepee" | "simp" | "humour" | "IQ" | "horny" | "fat" | "tall" | "gender" | "looks" | "grade"} type
+ * @param {"gay" | "peepee" | "simp" | "humour" | "IQ" | "horny" | "fat" | "tall" | "gender" | "looks" | "grade" | "mixed"} type
  * @param {randomRateConfig} config
  * @return {{type: string, result: {string: string, number: number, differenceString: string, differenceNumber: number, maxString: string, maxNumber: number}}}
  */
@@ -183,11 +183,11 @@ async function randomRate(type, config = randomRateConfig) {
             return {
                 type: `${type}_rate`,
                 result: {
-                    string: `Grade ${result.letter} (${randomValue})`,
-                    number: result.number,
-                    differenceString: `${randomValue} away from highest score`,
-                    differenceNumber: randomVal,
-                    maxString: `${config[`${type}_rate`]} points`,
+                    string: `Grade ${result.letter} (${randomValue}/${maxScore})`,
+                    number: randomValue,
+                    differenceString: `${maxScore - randomValue} away from highest score`,
+                    differenceNumber: maxScore - randomValue,
+                    maxString: `${maxScore} points`,
                     maxNumber: maxScore
                 }
             }
@@ -195,5 +195,4 @@ async function randomRate(type, config = randomRateConfig) {
             throw console.trace('Invalid type!');
     }
 }
-randomRate('grade').then(console.log)
 module.exports = randomRate
