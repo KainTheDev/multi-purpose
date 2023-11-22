@@ -226,17 +226,17 @@ async function randomRate(type, config = randomRateConfig) {
         case "mixed":
             const mixed_rate = config[`${type}_rate`]
             const rates = Object.keys(config)
-            const max = rates.length
+            const max = rates.length-1
             const results = []
             for (const rate of rates) {
                 const func = rateFunctions[rate]
-                if(func) results.push(func(rate.split("_")[0]))
+                if (func) results.push([func(rate.split("_")[0]), results.length+1])
             }
             if (mixed_rate > max) {
                 throw console.trace(`'mixed_rate' value must be under ${max}`);
             } else return results
         default:
-            throw console.trace('Invalid TYPE!');
+            throw console.trace('Invalid type.');
     }
 }
 randomRate('mixed').then(console.log)
