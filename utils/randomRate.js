@@ -28,7 +28,7 @@ const randomRateConfig = {
 }
 /**
  * @param {"gay" | "peepee" | "simp" | "humour" | "IQ" | "horny" | "fat" | "tall" | "gender" | "looks" | "grade" | "mixed"} TYPE
- * @param {{ gay_rate: number, peepee_rate: number, simp_rate: number, humour_rate: string[], IQ_rate: number, horny_rate: number, fat_rate: number, tall_rate: number, gender_rate: number, looks_rate: number, grade_rate: [...{letter: string, min: number, max: number}], mixed_rate: number}} config
+ * @param {{ gay_rate: number, peepee_rate: number, simp_rate: number, humour_rate: string[], IQ_rate: number, horny_rate: number, fat_rate: number, tall_rate: number, gender_rate: number, looks_rate: number, grade_rate: ...{letter: string, min: number, max: number}, mixed_rate: number}} config
  * @return {{type: string, result: {string: string, number: number, differenceString: string, differenceNumber: number, maxString: string, maxNumber: number}}}
  */
 async function randomRate(type, config = randomRateConfig) {
