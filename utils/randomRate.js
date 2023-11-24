@@ -224,20 +224,30 @@ async function randomRate(type, config = randomRateConfig) {
         case "grade":
             return rateFunctions[`${type}_rate`](type)
         case "mixed":
-            const mixed_rate = config[`${type}_rate`]
-            const rates = Object.keys(config)
-            const max = rates.length-1
-            const results = []
-            for (const rate of rates) {
-                const func = rateFunctions[rate]
-                if (func) results.push([func(rate.split("_")[0]), results.length+1])
+            const mixedRateLimit = config[`${type}_rate`];
+            const rates = Object.keys(config).filter(key => key !== 'mixed_rate');
+            const max = rates.length;
+            const results = [];
+
+            if (mixedRateLimit > max) {
+                throw new Error(`'mixed_rate' value must be under ${max}`);
+            } else {
+                const selectedRates = new Set();
+                while (results.length < mixedRateLimit) {
+                    const randomIndex = Math.floor(Math.random() * max);
+                    if (!selectedRates.has(randomIndex)) {
+                        selectedRates.add(randomIndex);
+                        const rate = rates[randomIndex];
+                        const func = rateFunctions[rate];
+                        if (func) {
+                            results.push(func(rate.split("_")[0]));
+                        }
+                    }
+                }
+                return results;
             }
-            if (mixed_rate > max) {
-                throw console.trace(`'mixed_rate' value must be under ${max}`);
-            } else return results
         default:
             throw console.trace('Invalid type.');
     }
 }
-randomRate('mixed').then(console.log)
 module.exports = randomRate
