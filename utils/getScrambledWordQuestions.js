@@ -29,7 +29,7 @@ async function getScrambledWordQuestions(config = { words: 10 }) {
     let finalQuestions;
     while (true) {
         let generatedQuestions = scrambleWords();
-        if (10 > generatedQuestions.length) {
+        if (config.words > generatedQuestions.length) {
             generatedQuestions = scrambleWords();
         } else {
             finalQuestions = generatedQuestions;
