@@ -6,22 +6,38 @@ const { default: fetch } = require("node-fetch");
  * @param {number} config.words Number of questions that are going to be generated.
  */
 async function getScrambledWordQuestions(config = { words: 10 }) {
-    if (typeof config.words !== 'number') throw console.trace("Parameter 'words' must be a number");
-
-    const response = await fetch(`https://random-word-api.vercel.app/api?words=${config.words}`);
-    if (!response.ok) {
-        throw console.trace(`Failed to fetch words. Status: ${response.status}`);
+    if (typeof config.words !== 'number') {
+        throw console.trace("Parameter 'words' must be a number");
     }
 
-    const words = await response.json();
+    const wordApiResponse = await fetch(`https://random-word-api.vercel.app/api?words=${config.words}`);
+    if (!wordApiResponse.ok) {
+        throw console.trace(`Failed to fetch words. Status: ${wordApiResponse.status}`);
+    }
 
-    // Scramble the words
-    const scrambledWords = words.map(word => {
-        const scrambled = word.split('').sort(() => Math.random() - 0.5).join('');
-        return { word, scrambled };
-    });
+    const wordsData = await wordApiResponse.json();
 
-    return scrambledWords;
+    function scrambleWords() {
+        const scrambledWords = wordsData.map(word => {
+            const scrambled = word.split('').sort(() => Math.random() - 0.5).join('');
+            return { original: word, scrambled };
+        });
+        const filteredWords = scrambledWords.filter(question => question.original !== question.scrambled);
+        return filteredWords;
+    }
+
+    let finalQuestions;
+    while (true) {
+        let generatedQuestions = scrambleWords();
+        if (10 > generatedQuestions.length) {
+            generatedQuestions = scrambleWords();
+        } else {
+            finalQuestions = generatedQuestions;
+            break;
+        }
+    }
+
+    return finalQuestions;
 }
 
 module.exports = getScrambledWordQuestions;
