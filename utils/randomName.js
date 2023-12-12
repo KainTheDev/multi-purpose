@@ -15,7 +15,7 @@ async function randomName(apiKey, config={names_list: [], type: 'fullname'}) {
     }
   })
   const data = await response.json()
-  if (data.status) throw new Error(data.error);
+  if (data.status) throw new Error(data.title);
   const namesList = data
   for (const name of config.names_list) {
     namesList.push(name)
