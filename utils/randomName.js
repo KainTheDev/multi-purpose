@@ -5,7 +5,7 @@ const { default: fetch } = require("node-fetch");
  * @param {Object} config
  * @param {"firstname" | "surname" | "fullname"} [config.type]
  * @param {Array} config.names_list
- * @returns 
+ * @returns {string}
  */
 async function randomName(apiKey, config={names_list: [], type: 'fullname'}) {
   if (config.names_list && typeof config.names_list !== "object" && !config.names_list.length) throw new Error("names_list parameter must be array.");
