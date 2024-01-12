@@ -15,6 +15,7 @@ npm install multi-purpose
 
 ## Documentation
 [Click here](https://kainthedev.github.io/multi-documentation/) for docs.
+[Click here](https://multi-purpose-api.vercel.app/) for API docs + tutorial to get API keys.
 
 ## Contribution
 
