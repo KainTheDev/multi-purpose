@@ -3,7 +3,6 @@ const randomName = require("./utils/randomName");
 const randomNumber = require("./utils/randomNumber");
 const randomTOD = require("./utils/randomTOD");
 const shibeOnline = require("./utils/shibeOnline");
-const Database = require("./utils/Database");
 const textDatabase = require("./utils/textDatabase")
 const getTriviaQuestions = require("./utils/getTriviaQuestions");
 const getScrambledWordQuestions = require("./utils/getScrambledWordQuestions");
@@ -22,7 +21,6 @@ const multiPurpose = {
   randomEightBallAnswer,
   randomWUR,
   randomRate,
-  Database,
   textDatabase
 }
 
