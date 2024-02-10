@@ -4,6 +4,7 @@ const { default: fetch } = require("node-fetch");
  * Get questions for scrambled words game.
  * @param {object} config Configuration parameter.
  * @param {number} config.words Number of questions that are going to be generated.
+ * @returns {object}
  */
 async function getScrambledWordQuestions(config = { words: 10 }) {
     if (typeof config.words !== 'number') {

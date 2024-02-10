@@ -12,11 +12,9 @@ const randomRate = require("./utils/randomRate");
 
 const multiPurpose = {
   customSearch,
-  randomName,
   randomNumber,
   randomTOD,
   shibeOnline,
-  getTriviaQuestions,
   getScrambledWordQuestions,
   randomEightBallAnswer,
   randomWUR,
