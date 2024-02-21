@@ -7,6 +7,7 @@ const getScrambledWordQuestions = require("./utils/getScrambledWordQuestions");
 const randomEightBallAnswer = require("./utils/randomEightBallAnswer");
 const randomWUR = require("./utils/randomWUR");
 const randomRate = require("./utils/randomRate");
+const getTriviaQuestions = require('./utils/getTriviaQuestions')
 
 const multiPurpose = {
   customSearch,
@@ -14,6 +15,7 @@ const multiPurpose = {
   randomTOD,
   shibeOnline,
   getScrambledWordQuestions,
+  getTriviaQuestions,
   randomEightBallAnswer,
   randomWUR,
   randomRate,

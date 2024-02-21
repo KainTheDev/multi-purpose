@@ -32,11 +32,15 @@ const randomRateConfig = {
  * @param {{ gay_rate: number, peepee_rate: number, simp_rate: number, humour_rate: string[], IQ_rate: number, horny_rate: number, fat_rate: number, tall_rate: number, relationship_rate: number, gender_rate: number, looks_rate: number, grade_rate: Array.<{letter: string, min: number, max: number}>, mixed_rate: number}} config
  * @return {{type: string, result: {string: string, number: number, differenceString: string, differenceNumber: number, maxString: string, maxNumber: number}}}
  */
-async function randomRate(type, config = randomRateConfig) {
-
+async function randomRate(type, config) {
+    const ratesCount = Object.keys(randomRateConfig).length
+    const configRatesCount = Object.keys(config).length
+    if (ratesCount !== configRatesCount) {
+        config = Object.assign(randomRateConfig, config)
+    };
     const randomizeNumber = (number) => Math.floor(Math.random() * number)
     const randomRange = (min, max) => Math.floor(Math.random() * (max - min) + min)
-    function regularRate() {
+    function regularRate(type) {
         randomValue = randomizeNumber(config[`${type}_rate`])
         return {
             type: `${type}_rate`,
@@ -213,15 +217,15 @@ async function randomRate(type, config = randomRateConfig) {
             return rateFunctions[`${type}_rate`](type)
         case "mixed":
             const mixedRateLimit = config[`${type}_rate`];
-            const rates = Object.keys(config).filter(key => key !== 'mixed_rate');
-            const max = rates.length;
+            const rates = Object.keys(randomRateConfig).filter(key => key !== 'mixed_rate');
+            const max = rates.length - 1;
             const results = [];
 
             if (mixedRateLimit > max) {
-                throw new Error(`'mixed_rate' value must be under ${max}`);
+                throw new Error(`'mixed_rate' value must be under or equal to ${max}`);
             } else {
                 const selectedRates = new Set();
-                while (results.length < mixedRateLimit) {
+                while (results.length !== mixedRateLimit) {
                     const randomIndex = Math.floor(Math.random() * max);
                     if (!selectedRates.has(randomIndex)) {
                         selectedRates.add(randomIndex);
