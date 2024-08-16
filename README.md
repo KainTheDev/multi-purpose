@@ -3,7 +3,7 @@
 ## Description
 
 Multi-purpose - a package used for variety purpose. For more information, please read in the docs below.
-This package was made by Kain. It's main purpose was used for Discord bots.
+This package was made by Nam. It's main purpose was used for Discord bots.
 
 ## Installation
 
@@ -14,12 +14,12 @@ npm install multi-purpose
 ```
 
 ## Documentation
-[Click here](https://kainthedev.github.io/multi-documentation/) for docs.
+[Click here](https://namthedev.github.io/multi-documentation/) for docs.
 [Click here](https://multi-purpose-api.vercel.app/) for API docs + tutorial to get API keys.
 
 ## Contribution
 
-We welcome contributions to the Multi-purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/KainTheDev/multi-purpose).
+We welcome contributions to the Multi-purpose package. If you encounter any issues or have ideas for improvements, feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/NamTheDev/multi-purpose).
 
 ## License
 

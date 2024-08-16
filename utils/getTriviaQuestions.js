@@ -7,7 +7,7 @@ const he = require('he');
  * @param {string} category 
  * @param {'easy' | 'medium' | 'hard'} difficulty 
  * @param {'boolean' | 'multiple'} type 
- * @returns 
+ * @returns {Array.<{category: string, type: string, difficulty: string, question: string, correct_answer: string, incorrect_answers: Array.<string>}>}
  */
 async function getTriviaQuestions(questionsAmount, category, difficulty, type) {
     // Fetching categories to validate user input

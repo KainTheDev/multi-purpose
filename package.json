@@ -5,27 +5,30 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "jsdoc utils --destination ../multi-documentation"
+    "jsdoc": "jsdoc utils --destination ../multi-documentation --configure jsdoc.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoulYT1534/multi-purpose.git"
+    "url": "git+https://github.com/NamTheDev/multi-purpose.git"
   },
   "keywords": [
     "multiple-purpose",
     "multi-purpose"
   ],
-  "author": "Soul",
+  "author": "Nam",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SoulYT1534/multi-purpose/issues"
+    "url": "https://github.com/NamTheDev/multi-purpose/issues"
   },
-  "homepage": "https://github.com/SoulYT1534/multi-purpose#readme",
+  "homepage": "https://github.com/NamTheDev/multi-purpose#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
     "he": "^1.2.0",
     "jsdoc": "^4.0.2",
     "node-fetch": "^2.6.7",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "clean-jsdoc-theme": "^4.3.0"
   }
 }
